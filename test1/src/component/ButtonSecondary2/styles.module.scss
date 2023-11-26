@@ -1,0 +1,30 @@
+.button {
+    display: inline-flex;
+    padding: 16px 32px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 2px;
+    color: #FD3419;
+    font-family: Inter;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: #ffffff;
+
+    &:hover {
+        border: 1px solid #DADADA;
+    }
+}
+
+.button.disabled {
+    color: #8D8E97;
+    background-color: #E8E8E8;
+}
+
+.button:disabled {
+    color: #8D8E97;
+    background-color: #E8E8E8;
+}

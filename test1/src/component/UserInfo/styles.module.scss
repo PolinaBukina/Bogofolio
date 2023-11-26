@@ -1,0 +1,35 @@
+.button {
+    background-color: #2231AA;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 34px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #5360CD;
+    height: 84px;
+    width: 200px;
+
+    .symbols {
+        border-radius: 2px;
+        background: #5360CD;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 34px;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

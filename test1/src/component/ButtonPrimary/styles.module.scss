@@ -1,0 +1,30 @@
+.button {
+    display: inline-flex;
+    padding: 16px 32px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 2px;
+    background-color: #2231AA;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border: none;
+    /* 133.333% */
+
+    &:hover {
+        background-color: #5360CD;
+    }
+}
+
+.button.disabled {
+    color: #8D8E97;
+    background-color: #E8E8E8;
+}
+
+.button:disabled {
+    color: #8D8E97;
+    background-color: #E8E8E8;
+}

@@ -1,0 +1,46 @@
+.input {
+    width: 76%;
+    height: 80px;
+    flex-shrink: 0;
+    background: #2231AA;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.0);
+
+    &::placeholder {
+        color: #2231AA;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
+    }
+
+
+
+    &:focus {
+        // border-radius: 2px;
+        background: #5360CD;
+        // border: 2px solid #DADADA;
+        // background: #FFF;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.50);
+        }
+    }
+}
+
+.button {
+    width: 84px;
+    // height: 84px;
+    flex-shrink: 0;
+    background: #2231AA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5360CD;
+
+    // path {
+    //     fill: #FFFFFF;
+    // }
+}

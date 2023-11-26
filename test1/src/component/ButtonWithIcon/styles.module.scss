@@ -1,0 +1,43 @@
+.button {
+    display: inline-flex;
+    padding: 16px 32px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 2px;
+    background: #E8E8E8;
+    background-color: #E8E8E8;
+    color: #313037;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border: none;
+
+    &:hover {
+        background-color: #5360CD;
+        color: #FFFFFF;
+
+        path {
+            fill: #FFFFFF;
+        }
+    }
+}
+
+.button.disabled {
+    color: #8D8E97;
+    background-color: #E8E8E8;
+
+    path {
+        color: #8D8E97;
+    }
+}
+
+.button:disabled {
+    color: #8D8E97;
+    background-color: #E8E8E8;
+
+    path {
+        color: #8D8E97;
+    }
+}

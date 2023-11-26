@@ -1,0 +1,48 @@
+.title {
+    color: red;
+    // width: 30%;
+}
+
+.tabs {
+
+
+
+    .allTab {
+        border-bottom: 1px solid #DADADA;
+        height: 56px;
+
+        .tab {
+            width: 40%;
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+
+            li {
+                button {
+                    display: flex;
+                    padding: 0px 40px 24px 40px;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    color: #313037;
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 24px;
+                    border: 2px solid rgba(0, 0, 0, 0.0);
+                    background-color: #ffffff;
+
+                    &:hover {
+                        color: #2231AA;
+                        cursor: pointer;
+                    }
+
+                    .active {
+                        border-bottom: 2px solid #313037;
+                    }
+                }
+            }
+        }
+    }
+}
