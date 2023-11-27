@@ -1,0 +1,18 @@
+.button {
+    display: inline-flex;
+    padding: 16px 32px;
+    align-items: flex-start;
+
+    gap: 10px;
+    border-radius: 2px;
+    background: #E8E8E8;
+    border: none;
+}
+
+.button:hover {
+    background-color: #5360CD;
+
+    path {
+        fill: white;
+    }
+}
