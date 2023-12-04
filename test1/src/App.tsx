@@ -10,7 +10,13 @@ import Tab from './component/Tabs/Tab';
 import { CardPost1 } from './component/CardPost1/CardPost1';
 import { CardPost2 } from './component/CardPost2/CardPost2';
 import { CardPost3 } from './component/CardPost3/CardPost3';
-import { Cards } from './component/Cards/Cards'
+import { Cards } from './component/Cards/Cards';
+import { Tabs2 } from './component/Tabs2/Tabs2';
+import { SignIn } from './component/SignIn/SignIn';
+import { Success } from './component/Success/Success';
+import { withBorder } from './component/HOC/withBorder';
+import { ContentPage } from './component/ContentPage/ContentPage'
+import { SignUp } from './component/SignUp/SignUp';
 
 // import { ButtonPrimary } from './component/ButtonPrimary/ButtonPrimary';
 // import { ButtonSecondary } from './component/ButtonSecondary/ButtonSecondary'
@@ -61,9 +67,14 @@ function App() {
         title={'Astronauts prep for new solar arrays on nearly seven-hour spacewalk'}
       /> */}
 
-      <Cards />
+      {/* <Cards /> */}
       {/* </header> */}
+      {/* <Tabs2 /> */}
 
+      {/* <SignIn /> */}
+      {/* <Success /> */}
+      <ContentPage />
+      {/* <SignUp /> */}
 
     </>
   )
