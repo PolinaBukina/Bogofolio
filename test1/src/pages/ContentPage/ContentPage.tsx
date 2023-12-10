@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { Header } from '../Header/Header'
-import { ButtonThumbDown } from '../ButtonThumbDown/ButtonThumbDown'
-import { ButtonThumbUp } from '../ButtonThumbUp/ButtonThumbUp'
-import { ButtonWithIcon } from '../ButtonWithIcon/ButtonWithIcon'
-import { Title } from '../Ttitle/Title'
-import { Footer } from '../Footer/Footer'
+import { Header } from '../../component/Header/Header'
+import { ButtonThumbDown } from '../../component/ButtonThumbDown/ButtonThumbDown'
+import { ButtonThumbUp } from '../../component/ButtonThumbUp/ButtonThumbUp'
+import { ButtonWithIcon } from '../../component/ButtonWithIcon/ButtonWithIcon'
+import { Title } from '../../component/Ttitle/Title'
+import { Footer } from '../../component/Footer/Footer'
 
 const text = [
     'Astronauts Kayla Barron and Raja Chari floated out of the International Space Station airlock for a spacewalk Tuesday, installing brackets and struts to support new solar arrays to upgrade the research lab’s power system on the same day that crewmate Mark Vande Hei marked his 341st day in orbit, a U.S. record for a single spaceflight.',

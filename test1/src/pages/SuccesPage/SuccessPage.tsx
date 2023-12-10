@@ -1,29 +1,26 @@
 import React from 'react'
-import { Header } from '../Header/Header'
-import { InputText } from '../InputText/InputText'
+import { InputText } from '../../component/InputText/InputText'
 import styles from './styles.module.scss'
-import { ButtonPrimary } from '../ButtonPrimary/ButtonPrimary'
-import { Title } from '../Ttitle/Title'
-import { Footer } from '../Footer/Footer'
+import { ButtonPrimary } from '../../component/ButtonPrimary/ButtonPrimary'
+import { Title } from '../../component/Ttitle/Title'
+import { BackToHomeButton } from '../../component/BackToHomeButton/BackToHomeButton'
 
-export const Success = () => {
+export const SuccessPage = () => {
     return (
         <>
-            <Header />
             <div className={styles.container}>
                 <div className={styles.title}>
-                    <a href=''>Back to home</a>
+                    <BackToHomeButton />
                     <Title name={'Success'} />
                 </div>
                 <form action="" className={styles.form}>
-                    <p>
-                        Email confirmed.
+                    <p className={styles.text}>
+                        Email confirmed. <br />
                         Your registration is now completed
                     </p>
                     <ButtonPrimary name={"Go To Home"} />
                 </form>
             </div>
-            <Footer />
         </>
     )
 }
