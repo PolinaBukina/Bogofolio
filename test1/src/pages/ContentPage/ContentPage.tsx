@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { Header } from '../../component/Header/Header'
 import { ButtonThumbDown } from '../../component/ButtonThumbDown/ButtonThumbDown'
@@ -6,6 +6,8 @@ import { ButtonThumbUp } from '../../component/ButtonThumbUp/ButtonThumbUp'
 import { ButtonWithIcon } from '../../component/ButtonWithIcon/ButtonWithIcon'
 import { Title } from '../../component/Ttitle/Title'
 import { Footer } from '../../component/Footer/Footer'
+import { BlogPostType } from '../../helpers/Types'
+import { useParams } from 'react-router-dom'
 
 const text = [
     'Astronauts Kayla Barron and Raja Chari floated out of the International Space Station airlock for a spacewalk Tuesday, installing brackets and struts to support new solar arrays to upgrade the research lab’s power system on the same day that crewmate Mark Vande Hei marked his 341st day in orbit, a U.S. record for a single spaceflight.',
@@ -16,10 +18,27 @@ const text = [
 ]
 
 export const ContentPage = () => {
+    const { id } = useParams()
+    const [data, setData] = useState<BlogPostType>()
+
+    // лучше убрать это из page
+    useEffect(() => {
+        fetch('https://studapi.teachmeskills.by/blog/posts/' + id)
+            .then(res => res.json())
+            .then(res =>
+                setData(res))
+    }, [])
+
     return (
         <>
-            <Header />
-            <div className={styles.content}>
+
+            <div>
+                id: {data?.id}
+            </div>
+            <div>
+                title: {data?.title}
+            </div>
+            {/* <div className={styles.content}>
                 <div className={styles.title}>
                     <p>Home <a href=''>| Post1223</a></p>
                     <Title name={'Astronauts prep for new solar arrays on nearly seven-hour spacewalk'} />
@@ -43,8 +62,7 @@ export const ContentPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <Footer />
+            </div> */}
         </>
     )
 }

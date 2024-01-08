@@ -1,5 +1,5 @@
 .burger {
-    width: 84px;
+    width: 82.4px;
     // height: 84px;
     flex-shrink: 0;
     background: #2231AA;
@@ -9,18 +9,22 @@
     justify-content: center;
     border: 1px solid #5360CD;
 
+    svg {
+        transform: rotate(180deg);
+        transform-origin: center center
+    }
 
     path {
         fill: #FFFFFF;
     }
 }
 
-.menu {
-    // display: flex;
-    // flex-direction: row;
-    background-color: red;
-    // height: 100vh;
-    position: relative;
-    top: 100px;
-    left: -100px;
-}
+// .menu {
+//     // display: flex;
+//     // flex-direction: row;
+//     // background-color: red;
+//     // height: 100vh;
+//     position: relative;
+//     top: 100px;
+//     left: -100px;
+// }

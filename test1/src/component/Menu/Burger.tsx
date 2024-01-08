@@ -1,63 +1,27 @@
 import { useReducer, useState } from 'react'
 import { BurgerIcon } from './BurgerIcon'
 import { CancelIcon } from './CancelIcon'
+// import { Menu } from './Menu'
 import styles from './styles.module.scss'
 
-type Props = {
-    open: boolean
-    onClick: () => void
-}
+import { useSelector, useDispatch } from 'react-redux'
+import { selectMenu } from '../../store/menu/selectors'
+import { setClose, setOpen } from '../../store/menu/actions'
 
-type BurgerState = {
-    isOpened: boolean
-}
+export const Burger = () => {
 
-type BurgerAction = {
-    type: string
-}
+    const { isOpened } = useSelector(selectMenu)
+    const dispatch = useDispatch()
 
-const burgerInitState: BurgerState = {
-    isOpened: false
-}
+    const open = () => dispatch(setOpen())
+    const close = () => dispatch(setClose())
 
-const burgerReducer = (state: BurgerState, action: BurgerAction): BurgerState => {
-    switch (action.type) {
-        case 'open':
-            return {
-                isOpened: true
-            }
-        case 'close':
-            return {
-                isOpened: false
-            }
-        default:
-            return state
-    }
-}
-
-export const Burger = (props: Props) => {
-    const [state, dispatch] = useReducer(burgerReducer, burgerInitState)
-
-    const open = () => dispatch({
-        type: 'open'
-    })
-
-    const close = () => dispatch({
-        type: 'close'
-    })
 
     return (
-        // <div onClick={props.onClick} className={styles.burger}>
-        //     {
-        //         props.open ? <CancelIcon /> : <BurgerIcon />
-        //     }
-        // </div>
-        <div onClick={() => state.isOpened ? close() : open()} className={styles.burger}>
+        <div onClick={() => isOpened ? close() : open()} className={styles.burger}>
             {
-                state.isOpened ? (
-
+                isOpened ? (
                     <CancelIcon />
-
                 ) : (
                     <BurgerIcon />
                 )

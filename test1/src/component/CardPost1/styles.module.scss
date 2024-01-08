@@ -1,90 +1,120 @@
 .cardContent {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
     // justify-content: space-between;
-    // width: 45%;
+    // width: 90%;
     // width: 736px;
     // height: 452px;
-    width: 736px;
-    height: 452px;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #DADADA;
+    // width: 736px;
+    // width: 65%;
+    // height: 452px;
+    // background-color: #FFFFFF;
 
-    .allText {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-top: 1em;
 
-        .text {
-            // width: 50%;
+    .card {
+        padding: 2.5em 0;
+        border-bottom: 1px solid #DADADA;
 
-            .header {
-                font-family: Inter;
-                font-size: 32px;
-                font-weight: 700;
-                line-height: 44px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: #313037;
-                cursor: pointer;
+        .allText {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
-                &:hover {
-                    color: #2231AA;
+            .text {
+                flex: 1;
+                // padding: 10px;
+
+                .header {
+                    height: 88px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    font-family: Inter;
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 44px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #313037;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #2231AA;
+                    }
                 }
+
+                .date {
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #8D8E97;
+                    margin: 0;
+                }
+
+                .description {
+                    height: 112px;
+                    text-overflow: ellipsis;
+
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #8D8E97;
+
+                    margin-bottom: 1.9em;
+                }
+
             }
 
-            .date {
-                font-family: Inter;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 24px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: #8D8E97;
-                margin: 0;
+            .image {
+                height: 250px;
+                width: 250px;
+                // height: 10%;
+                object-fit: cover;
+                margin-left: 30px;
+                cursor: pointer;
             }
 
-            .description {
-                font-family: Inter;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 28px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: #8D8E97;
-            }
+
         }
 
-        .image {
-            width: 35%;
-            height: 35%;
-        }
-    }
-
-    .allButtons {
-        display: flex;
-        justify-content: space-between;
-
-        .buttons {
-            width: 15%;
+        .allButtons {
             display: flex;
             justify-content: space-between;
 
-            button {
-                background-color: #FFFFFF;
-                border: none;
-                cursor: pointer;
-            }
+            .buttons {
+                // width: 15%;
+                display: flex;
+                justify-content: space-between;
 
-            p {
-                font-family: Inter;
-                font-size: 16px;
-                font-weight: 700;
-                line-height: 24px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: #313037;
+                button {
+                    // background-color: #FFFFFF;
+                    border: none;
+                    cursor: pointer;
+                    height: 22px;
+                }
+
+                p {
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #313037;
+
+                    margin: 0;
+                }
             }
         }
     }

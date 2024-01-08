@@ -1,8 +1,32 @@
 .header {
     display: flex;
+    // width: 100%;
+    // height: 84px;
+
+    // position: fixed;
+    // top: 0;
+
+    position: fixed;
     width: 100%;
     height: 84px;
-    background-color: red;
-    // position: relative;
-    // top: 100px;
+    background: green;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    // line-height: 50px;
+}
+
+// :global(.active) {
+//     background-color: violet;
+// }
+
+.newheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    transition: background-color 0.3s, padding 0.3s;
+    z-index: 1000;
 }

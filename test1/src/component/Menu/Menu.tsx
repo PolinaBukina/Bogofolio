@@ -1,26 +1,28 @@
 import React from 'react'
-import { UserInfo } from '../UserInfo/UserInfo'
-import styles from './styles.module.scss'
+// import { ThemeButtons } from '../ThemeButtons/ThemeButtons'
+// import { UserInfo } from '../UserInfo/UserInfo'
+// import styles from './styles.module.scss'
 
-type Props = {
-    open: boolean
-}
+// type Props = {
+//     open: boolean
+// }
 
-const data = ['Home', 'Add post']
+// const data = ['Home', 'Add post']
 
-export const Menu = (props: Props) => {
-    if (!props.open) {
-        return null
-    }
+// export const Menu = (props: Props) => {
+//     if (!props.open) {
+//         return null
+//     }
 
-    return (
-        <div>
-            <ul className={styles.menu}>
-                <UserInfo name={'Polina Bukina'} symbols={'PB'} />
-                {data.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             <ul className={styles.menu}>
+//                 <UserInfo />
+//                 {data.map((item, index) => (
+//                     <li key={index}>{item}</li>
+//                 ))}
+//                 {/* <ThemeButtons theme={theme} changeTheme={changeTheme}/> */}
+//             </ul>
+//         </div>
+//     )
+// }
