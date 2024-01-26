@@ -21,7 +21,7 @@ import { SuccessPage } from './pages/SuccesPage/SuccessPage';
 import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
 import { AddPostPage } from './pages/AddPostPage/AddPostPage';
 import { MainPage2 } from './pages/MainPage2/MainPage2';
-import SearchPage from './pages/SearchPage/SearchPage';
+import { SearchPage } from './pages/SearchPage/SearchPage';
 import { NewPassword } from './pages/NewPasswordPage/NewPasswordPage';
 import { RequireAuth } from './helpers/RequireAuth';
 import { ResetPage } from './pages/ResetPage/ResetPage';
@@ -30,6 +30,7 @@ import { useThemeContext } from './helpers/themeContext';
 import { Route, Routes } from 'react-router-dom';
 import { Error404Page } from './pages/Error404Page/Error404';
 import { ThemeButtons } from './component/ThemeButtons/ThemeButtons';
+import { AtivationPage } from './pages/ActivationPage'
 const tabs = [
   { aKey: 'all', title: 'All', content: 'a' },
   { aKey: 'myFavorites', title: 'My Favotites', content: 'b' },
@@ -46,7 +47,7 @@ function App() {
         <Route path='mainpage2' element={<MainPage2 />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
-        <Route path='regester' element={<RegistrationPage />} />
+        <Route path='register' element={<RegistrationPage />} />
         <Route path='search' element={<SearchPage />} />
         <Route path='newpassword' element={<NewPassword />} />
         <Route path='addpost' element={
@@ -57,6 +58,7 @@ function App() {
         <Route path='reset' element={<ResetPage />} />
         <Route path='succes' element={<SuccessPage />} />
         <Route path='content/:id' element={<ContentPage />} />
+        <Route path='activate' element={<AtivationPage />} />
       </Route>
 
       <Route path='*' element={<Error404Page />} />

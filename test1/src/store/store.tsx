@@ -4,12 +4,20 @@ import { themeReducer } from "./theme/reducer"
 import { burgerReducer } from './menu/reducer'
 import { tabReducer } from './tabs/reducer'
 import { postsReducer } from './posts/reducer'
+import { registrationReducer } from "./registration/reduser"
+import { authReducer } from "./auth/reducer"
+import { searchReducer } from "./search/reducer"
+import { addPostReducer } from "./addpost/reducer"
 
 const rootReducer = combineReducers({
     theme: themeReducer,
     menu: burgerReducer,
     tabs: tabReducer,
-    posts: postsReducer
+    posts: postsReducer,
+    reg: registrationReducer,
+    auth: authReducer,
+    search: searchReducer,
+    addpost: addPostReducer
 })
 
 const store = configureStore({

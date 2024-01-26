@@ -4,6 +4,7 @@ import styles from './styles.module.scss'
 type Props = {
     name: string
     disabled?: boolean
+    onClick?: () => void
 }
 
 export const ButtonPrimary = (props: Props) => {
@@ -14,5 +15,8 @@ export const ButtonPrimary = (props: Props) => {
         <button className={styles.button}>
             {props.name} {props.disabled}
         </button >
+        // <input type={'button'} className={styles.button}>
+        //     {props.name} {props.disabled}
+        // </input >
     )
 }

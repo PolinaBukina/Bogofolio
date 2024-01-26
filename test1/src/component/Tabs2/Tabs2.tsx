@@ -15,9 +15,12 @@ export const Tab = ({ text, active, onTabClick }: Props) => {
     const isActiveStyle = active ? styles.active : ''
 
     return (
-        <div className={styles.tab + '' + isActiveStyle} onClick={onTabClick}>
+        <div className={`${styles.tab} ${isActiveStyle}`} onClick={onTabClick}>
             {text}
         </div>
+        // <div className={styles.tab + '' + isActiveStyle} onClick={onTabClick}>
+        //     {text}
+        // </div>
     )
 }
 
@@ -29,7 +32,6 @@ export const Tabs2 = () => {
     const dispatch = useDispatch()
 
     const changeTabHandler = (index: number) => {
-        //setActiveTabIndex(index)
         dispatch(setTabAction(index))
     }
 

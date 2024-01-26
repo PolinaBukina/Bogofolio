@@ -6,13 +6,15 @@
     // position: fixed;
     // top: 0;
 
-    position: fixed;
+    // position: fixed;
     width: 100%;
     height: 84px;
-    background: green;
+    background: #2231AA;
     top: 0;
     text-align: center;
     color: #fff;
+    position: relative;
+    z-index: 3;
     // line-height: 50px;
 }
 

@@ -3,9 +3,10 @@ import { BlogPostType } from "../../helpers/Types"
 import { AppThunk } from "../store"
 import { PostsAction } from "./types"
 
-const loadPostsAction = (postList: BlogPostType[]): PostsAction => ({
+const loadPostsAction = (postList: BlogPostType[], count: number): PostsAction => ({
     type: 'LOAD_POSTS',
-    postList: postList
+    postList: postList,
+    postCount: count
 })
 
 const setPageAction = (page: number): PostsAction => ({
@@ -22,7 +23,7 @@ export const loadPostsAsyncAction = (page: number = 1): AppThunk => {
         fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=${limit}&offset=${offset}`)
             .then(res => res.json())
             .then(res => {
-                dispatch(loadPostsAction(res.results))
+                dispatch(loadPostsAction(res.results, res.count))
             })
     }
 }

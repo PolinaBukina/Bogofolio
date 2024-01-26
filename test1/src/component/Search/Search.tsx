@@ -1,6 +1,7 @@
 import styles from './styles.module.scss'
 import { useState } from 'react'
-import { SearchButtonIcon } from './SearchButtonIcon'
+import { SearchButtonIcon } from '../Search2/control/SearchButtonIcon'
+// import { SearchButtonIcon } from './SearchButtonIcon'
 
 export const Search = () => {
     const [text, setText] = useState('')

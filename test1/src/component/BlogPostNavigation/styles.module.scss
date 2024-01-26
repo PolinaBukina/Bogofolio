@@ -14,15 +14,23 @@
         flex-direction: row;
         color: #8D8E97;
 
+        &:hover {
+            color: #2231AA;
+
+            path {
+                fill: #2231AA;
+            }
+        }
+
         path {
             fill: #8D8E97;
         }
     }
 
-    .next {
-        display: flex;
-        flex-direction: row;
-    }
+    // .next {
+    //     display: flex;
+    //     flex-direction: row;
+    // }
 
     .page {
         // width: 50%;

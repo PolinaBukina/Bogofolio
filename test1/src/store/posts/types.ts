@@ -3,6 +3,7 @@ export type PostsState = {
     limit: number
     offset: number
     page: number
+    postCount: number
     // active например
 }
 
@@ -10,6 +11,7 @@ export type PostsAction = {
     type: string //LOAD_POST
     postList?: BlogPostType[]
     page?: number
+    postCount?: number
 }
 
 export type BlogPostType = {

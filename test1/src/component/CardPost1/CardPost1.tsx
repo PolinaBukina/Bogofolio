@@ -6,9 +6,10 @@ import { Icon } from '../ButtonWithIcon/Icon'
 import { useSelector } from 'react-redux'
 import { selectPosts } from '../../store/posts/selectors'
 import { useDispatch } from 'react-redux'
-import { BlogPostType } from '../../store/posts/types'
+// import { BlogPostType } from '../../store/posts/types'
 import { loadPostsAsyncAction } from '../../store/posts/actions'
 import { AppDispatch } from '../../store/store'
+import { ButtonThumbDownIcon } from '../ButtonThumbDown/ButtonThumbDownIcon'
 
 // type BlogPostType = {
 //     id: number,
@@ -21,8 +22,10 @@ import { AppDispatch } from '../../store/store'
 //     author: number
 // }
 
+
+
 export const CardPost1 = () => {
-    // const [data, setData] = useState<BlogPostType[]>([])
+
 
     const [state, setState] = useState(0)
     const [state1, setState1] = useState(0)
@@ -45,8 +48,8 @@ export const CardPost1 = () => {
     return (
         <div className={styles.cardContent}>
             {
-                postlist.map((item) => (
-                    <div key={item.id} className={styles.card}>
+                postlist.map((item, index) => (
+                    <div key={item.id} className={`${styles.card} ${styles.card}${index}`}>
                         <div className={styles.allText}>
 
                             <div className={styles.text}>
@@ -73,7 +76,7 @@ export const CardPost1 = () => {
                                 </button>
                                 <p>{state}</p>
                                 <button onClick={increase1}>
-                                    <ButtonThumbUpIcon />
+                                    <ButtonThumbDownIcon />
                                 </button>
                                 <p>{state1}</p>
                             </div>

@@ -4,35 +4,42 @@ import styles from './styles.module.scss'
 import { ButtonPrimary } from '../../component/ButtonPrimary/ButtonPrimary'
 import { Title } from '../../component/Ttitle/Title'
 import { BackToHomeButton } from '../../component/BackToHomeButton/BackToHomeButton'
+import { useRegState } from '../../store/registration/selectors'
+import {
+    setEmailAction,
+    setUsernameAction,
+    setPasswordAction,
+    sendRegDataAction
+} from '../../store/registration/actions'
+import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../../helpers/useAppDispatch'
+import { useNavigate } from 'react-router-dom'
+import { SignUpForm } from '../../component/SignUpForm/SignUpForm'
 
-function useInput(initialValue: any) {
-    const [value, setValue] = useState(initialValue);
+// function useInput(initialValue: any) {
+//     const [value, setValue] = useState(initialValue);
 
-    function handleChange(e: { target: { value: any } }) {
-        setValue(e.target.value);
-    }
+//     function handleChange(e: { target: { value: any } }) {
+//         setValue(e.target.value);
+//     }
 
-    return [value, handleChange];
-}
+//     return [value, handleChange];
+// }
 
 export const SignUpPage = () => {
+
+    // const [text, setText] = useState(value)
     // const [email, setEmail] = React.useState('');
     // const [password, setPassword] = React.useState('');
 
-    const [name, setName] = useInput('');
-    const [email, setEmail] = useInput('');
-    const [password, setPassword] = useInput('');
+    // const [name, setName] = useInput('');
+    // const [email, setEmail] = useInput('');
+    // const [password, setPassword] = useInput('');
 
-    function handleSubmit(e: { preventDefault: () => void }) {
-        // e.preventDefault();
-        console.log(name, email, password)
-    }
-
-    const inputRef = useRef<HTMLInputElement>(null)
-
-    useEffect(() => {
-        inputRef.current?.focus()
-    })
+    // function handleSubmit(e: { preventDefault: () => void }) {
+    //     // e.preventDefault();
+    //     console.log(name, email, password)
+    // }
 
     return (
         <>
@@ -41,16 +48,7 @@ export const SignUpPage = () => {
                     <BackToHomeButton />
                     <Title name={'Sign Up'} />
                 </div>
-                <form action="" className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.allInputs}>
-                        <InputText name={'Name'} type={'text'} placeholder={'Your Name'} onChange={setName} ref1={inputRef} />
-                        <InputText name={'Email'} type={'email'} placeholder={'Your Email'} onChange={setEmail} />
-                        <InputText name={'Password'} type={'password'} placeholder={'Your Password'} onChange={setPassword} />
-                        <InputText name={'Confirm Password'} type={'password'} placeholder={'Confirm Password'} onChange={setPassword} />
-                    </div>
-                    <ButtonPrimary name={"Sign Up"} />
-                    <p className={styles.sign}>Already have an account? <a href=''> Sign in</a></p>
-                </form>
+                <SignUpForm />
             </div>
         </>
     )

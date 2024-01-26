@@ -4,7 +4,8 @@ const initState: PostsState = {
     postlist: [],
     limit: 11,
     offset: 0,
-    page: 1
+    page: 1,
+    postCount: 0
 }
 
 export const postsReducer = (state = initState, action: PostsAction): PostsState => { //state i action здесь всегда!! state - предыдущее состояние, или текущее на данный момент
@@ -13,7 +14,8 @@ export const postsReducer = (state = initState, action: PostsAction): PostsState
             return {
                 ...state,
                 // postlist: action?.postList || []
-                postlist: action.postList! // ! указывает что postlist всегда будет!!
+                postlist: action.postList!, // ! указывает что postlist всегда будет!!
+                postCount: action.postCount!
             }
         case 'SET_PAGE':
             return {

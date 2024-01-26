@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 export const BackToHomeButton = () => {
     const navigate = useNavigate()
 
-    const goHome = () => navigate(-1)
+    // const goHome = () => navigate(-1)
     //const goHome = () => navigate('/')
 
     return (
@@ -13,9 +13,9 @@ export const BackToHomeButton = () => {
             <Link to='/' className={styles.back}>
                 Back to home
             </Link>
-            <span onClick={goHome}>
+            {/* <span onClick={goHome}>
                 Back to home 2
-            </span>
+            </span> */}
         </>
     )
 }

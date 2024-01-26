@@ -31,30 +31,21 @@
 
             &.active {
                 display: flex;
-                padding: 0px 40px 24px 40px;
                 justify-content: center;
                 align-items: flex-start;
                 gap: 10px;
-                border: 1px solid blue;
             }
         }
     }
 
-    .tab {
-        display: flex;
-        padding: 0px 40px 24px 40px;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 10px;
-        border: 1px solid blue;
 
-        // &.active {
-        //     display: flex;
-        //     padding: 0px 40px 24px 40px;
-        //     justify-content: center;
-        //     align-items: flex-start;
-        //     gap: 10px;
-        //     border: 1px solid blue;
-        // }
+}
+
+.tab {
+    padding: 0px 40px 24px 40px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+
+    &.active {
+        border-bottom: 3px solid blue;
     }
 }

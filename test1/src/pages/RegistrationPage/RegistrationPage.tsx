@@ -4,6 +4,7 @@ import styles from './styles.module.scss'
 import { ButtonPrimary } from '../../component/ButtonPrimary/ButtonPrimary'
 import { Title } from '../../component/Ttitle/Title'
 import { BackToHomeButton } from '../../component/BackToHomeButton/BackToHomeButton'
+import { NavLink } from 'react-router-dom'
 
 export const RegistrationPage = () => {
     return (
@@ -11,7 +12,7 @@ export const RegistrationPage = () => {
             <div className={styles.container}>
                 <div className={styles.title}>
                     <BackToHomeButton />
-                    <Title name={'Reset password'} />
+                    <Title name={'Registration Confirmation'} />
                 </div>
                 <form action="" className={styles.form}>
                     <div className={styles.allInputs}>
@@ -21,7 +22,9 @@ export const RegistrationPage = () => {
                             Please, check your email
                         </p>
                     </div>
-                    <ButtonPrimary name={"Go to home"} />
+                    <NavLink to='/'>
+                        <ButtonPrimary name={"Go to home"} />
+                    </NavLink>
                 </form>
             </div>
         </>

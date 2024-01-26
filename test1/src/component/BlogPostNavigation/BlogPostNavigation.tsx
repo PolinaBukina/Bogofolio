@@ -4,12 +4,14 @@ import { useDispatch } from 'react-redux'
 import { loadPostsAsyncAction } from '../../store/posts/actions'
 import { selectPosts } from '../../store/posts/selectors'
 import { AppDispatch } from '../../store/store'
+import { Pager } from '../Pager/Pager'
 import { ArrowIcon } from './ArrowIcon'
 import styles from './styles.module.scss'
 
-const BlogPostNavigation = () => {
+export const BlogPostNavigation = () => {
     const dispatch = useDispatch<AppDispatch>()
-    const { page } = useSelector(selectPosts)
+    // const { page } = useSelector(selectPosts)
+    const { postCount, page } = useSelector(selectPosts)
 
     const onPageClick = (page: number) => {
         dispatch(loadPostsAsyncAction(page))
@@ -35,15 +37,20 @@ const BlogPostNavigation = () => {
             </div>
 
             <div className={styles.numPage}>
-                <span className={styles.page} onClick={() => onPageClick(1)}>1</span>
+                {/* <span className={styles.page} onClick={() => onPageClick(1)}>1</span>
                 <span className={styles.page} onClick={() => onPageClick(2)}>2</span>
                 <span className={styles.page} onClick={() => onPageClick(3)}>3</span>
                 <span className={styles.page} onClick={() => onPageClick(4)}>...</span>
-                <span className={styles.page} onClick={() => onPageClick(6)}>6</span>
+                <span className={styles.page} onClick={() => onPageClick(6)}>6</span> */}
+                <Pager
+                    postsCount={postCount}
+                    postsPerPage={12}
+                    currentPage={page}
+                />
             </div>
 
             <div className={styles.page}>
-                <div className={styles.next}>
+                <div className={styles.prev}>
                     <span className={styles.page} onClick={() => onNextPage()}>Next</span>
                     <ArrowIcon />
                 </div>
@@ -51,5 +58,3 @@ const BlogPostNavigation = () => {
         </div>
     )
 }
-
-export default BlogPostNavigation
