@@ -1,5 +1,5 @@
-import React from 'react'
-import { InputText } from '../../component/InputText/InputText'
+// import React from 'react'
+// import { InputText } from '../../component/InputText/InputText'
 import styles from './styles.module.scss'
 import { ButtonPrimary } from '../../component/ButtonPrimary/ButtonPrimary'
 import { Title } from '../../component/Ttitle/Title'

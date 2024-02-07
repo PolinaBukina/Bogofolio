@@ -2,8 +2,8 @@ import React, { FormEvent, useEffect, useRef, useState } from 'react'
 import { InputText } from '../../component/InputText/InputText'
 import styles from './styles.module.scss'
 import { ButtonPrimary } from '../../component/ButtonPrimary/ButtonPrimary'
-import { Title } from '../../component/Ttitle/Title'
-import { BackToHomeButton } from '../../component/BackToHomeButton/BackToHomeButton'
+// import { Title } from '../../component/Ttitle/Title'
+// import { BackToHomeButton } from '../../component/BackToHomeButton/BackToHomeButton'
 import { useRegState } from '../../store/registration/selectors'
 import {
     setEmailAction,
@@ -11,11 +11,11 @@ import {
     setPasswordAction,
     sendRegDataAction
 } from '../../store/registration/actions'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 import { useAppDispatch } from '../../helpers/useAppDispatch'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { setDarkThemeAction } from '../../store/theme/actions'
-import { type } from 'os'
+// import { setDarkThemeAction } from '../../store/theme/actions'
+// import { type } from 'os'
 
 type RegType = {
     username: string

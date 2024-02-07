@@ -1,17 +1,14 @@
-import { useSearchState } from '../../../store/search/selectors'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { useFavorites } from '../../store/favorite/selectors'
+import { ButtonThumbDownIcon } from '../ButtonThumbDown/ButtonThumbDownIcon'
+import { ButtonThumbUpIcon } from '../ButtonThumbUp/ButtonThumbUpIcon'
 import styles from './styles.module.scss'
-import { ButtonThumbUpIcon } from '../../ButtonThumbUp/ButtonThumbUpIcon'
-import { Icon } from '../../ButtonWithIcon/Icon'
-import { MoreIcon } from '../../CardPost1/MoreIcon'
-import { ButtonThumbDownIcon } from '../../ButtonThumbDown/ButtonThumbDownIcon'
 
-export const SearchResults = () => {
-    // const searchRequestText = 'Astronauts'
-    const { text, data } = useSearchState()
-
+export const Favorites = () => {
     const [state, setState] = useState(0)
     const [state1, setState1] = useState(0)
+
+    const { data } = useFavorites()
 
     const increase = () => {
         setState(state + 1)
@@ -23,9 +20,9 @@ export const SearchResults = () => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.header1}>
+            {/* <h2 className={styles.header1}>
                 Search results `{text}`
-            </h2>
+            </h2> */}
 
             <div className={styles.cardContent}>
                 {
@@ -56,14 +53,14 @@ export const SearchResults = () => {
                                     </button>
                                     <p>{state1}</p>
                                 </div>
-                                <div className={styles.buttons}>
+                                {/* <div className={styles.buttons}>
                                     <button>
                                         <Icon />
                                     </button>
                                     <button>
                                         <MoreIcon />
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))

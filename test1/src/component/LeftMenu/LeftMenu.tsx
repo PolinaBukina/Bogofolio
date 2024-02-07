@@ -5,15 +5,13 @@ import { UserInfo } from '../UserInfo/UserInfo'
 import { ThemeButtons } from '../ThemeButtons/ThemeButtons'
 import { ButtonSecondary } from '../ButtonSecondary/ButtonSecondary'
 import { NavLink } from 'react-router-dom'
-
-const data = ['Home', 'Add post']
-
-type BlogPostType = {
-    url: string
-}
+import { RequireAuth } from '../../helpers/RequireAuth'
+import { useAuthState } from '../../store/auth/selectors'
+import { selectTheme } from '../../store/theme/selectors'
 
 const LeftMenu = () => {
     const { isOpened } = useSelector(selectMenu)
+    const { isAuthhorized } = useAuthState()
 
     if (!isOpened) {
         return null
@@ -43,7 +41,12 @@ const LeftMenu = () => {
     return (
         <div className={styles.menu} >
             <ul >
-                <UserInfo />
+                {
+                    isAuthhorized && (
+                        <UserInfo />
+                    )
+                }
+
                 {/* {data.map((item, index) => (
                     <button className={styles.button}>
                         <li key={index}>{item}</li>
@@ -72,7 +75,9 @@ const LeftMenu = () => {
             </ul>
             <div>
                 <ThemeButtons />
-                <ButtonSecondary name={'Sign In'} />
+                <NavLink to='/signin'>
+                    <ButtonSecondary name={'Sign In'} />
+                </NavLink>
             </div>
         </div>
     )

@@ -32,6 +32,8 @@ export const startSearchAction = (): AppThunk => {
             .then(res => res.json())
             .then(data => {
                 dispatch(saveDataAction(data.results))
+                console.log(data)
+                console.log(data.results)
             })
     }
 }

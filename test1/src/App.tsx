@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { ButtonPrimary } from './component/ButtonPrimary/ButtonPrimary';
 import { ButtonSecondary } from './component/ButtonSecondary/ButtonSecondary';
 import { ButtonSecondary2 } from './component/ButtonSecondary2/ButtonSecondary2';
@@ -31,6 +31,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Error404Page } from './pages/Error404Page/Error404';
 import { ThemeButtons } from './component/ThemeButtons/ThemeButtons';
 import { AtivationPage } from './pages/ActivationPage'
+import { Favorites } from './component/Favorites/Favorites';
 const tabs = [
   { aKey: 'all', title: 'All', content: 'a' },
   { aKey: 'myFavorites', title: 'My Favotites', content: 'b' },
@@ -57,7 +58,8 @@ function App() {
         } />
         <Route path='reset' element={<ResetPage />} />
         <Route path='succes' element={<SuccessPage />} />
-        <Route path='content/:id' element={<ContentPage />} />
+        <Route path='content:id' element={<ContentPage />} />
+        <Route path='favorites' element={<Favorites />} />
         <Route path='activate' element={<AtivationPage />} />
       </Route>
 

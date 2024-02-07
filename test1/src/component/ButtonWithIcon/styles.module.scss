@@ -24,6 +24,14 @@
     }
 }
 
+svg {
+    &:hover {
+        path {
+            fill: #2231AA;
+        }
+    }
+}
+
 .button.disabled {
     color: #8D8E97;
     background-color: #E8E8E8;

@@ -16,7 +16,6 @@ export const Burger = () => {
     const open = () => dispatch(setOpen())
     const close = () => dispatch(setClose())
 
-
     return (
         <div onClick={() => isOpened ? close() : open()} className={styles.burger}>
             {

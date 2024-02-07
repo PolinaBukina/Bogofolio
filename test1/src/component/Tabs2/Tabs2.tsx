@@ -18,9 +18,6 @@ export const Tab = ({ text, active, onTabClick }: Props) => {
         <div className={`${styles.tab} ${isActiveStyle}`} onClick={onTabClick}>
             {text}
         </div>
-        // <div className={styles.tab + '' + isActiveStyle} onClick={onTabClick}>
-        //     {text}
-        // </div>
     )
 }
 

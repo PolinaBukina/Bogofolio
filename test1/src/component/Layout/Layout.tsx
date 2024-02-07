@@ -3,11 +3,11 @@ import { Outlet } from 'react-router-dom'
 import { useThemeContext } from '../../helpers/themeContext'
 import { Footer } from '../Footer/Footer'
 import { Header } from '../Header/Header'
-
 import { useSelector } from 'react-redux'
 import { selectTheme } from '../../store/theme/selectors'
 import LeftMenu from '../LeftMenu/LeftMenu'
 import { selectMenu } from '../../store/menu/selectors'
+import { CardPost3 } from '../CardPost3/CardPost3'
 
 const Layout = () => {
     // const themeCtx = useThemeContext()
@@ -20,7 +20,6 @@ const Layout = () => {
             <LeftMenu />
             <main className='main'>
                 <Outlet />
-
             </main>
 
             <Footer />

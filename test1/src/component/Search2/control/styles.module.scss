@@ -12,10 +12,9 @@
             height: 80px;
             width: 100%;
             background: #2231AA;
-            // background: #5360CD;
             outline: none;
             border: 1px solid #5360CD;
-            color: #FFFFFF;
+            color: #ffffff00;
 
             &::placeholder {
                 color: #535fcd00;
@@ -28,10 +27,8 @@
             }
 
             &:focus {
-                // border-radius: 2px;
                 background: #5360CD;
-                // border: 2px solid #DADADA;
-                // background: #FFF;
+                color: #FFFFFF;
 
                 &::placeholder {
                     color: rgba(255, 255, 255, 0.50);
@@ -49,9 +46,5 @@
         align-items: center;
         justify-content: center;
         border: 1px solid #5360CD;
-
-        // path {
-        //     fill: #FFFFFF;
-        // }
     }
 }

@@ -8,6 +8,9 @@ import { registrationReducer } from "./registration/reduser"
 import { authReducer } from "./auth/reducer"
 import { searchReducer } from "./search/reducer"
 import { addPostReducer } from "./addpost/reducer"
+import { openCardReducer } from "./content/reducer"
+import { modalReducer } from "./modal/reducer"
+import { favoritesReducer } from "./favorite/reducer"
 
 const rootReducer = combineReducers({
     theme: themeReducer,
@@ -17,7 +20,10 @@ const rootReducer = combineReducers({
     reg: registrationReducer,
     auth: authReducer,
     search: searchReducer,
-    addpost: addPostReducer
+    addpost: addPostReducer,
+    modal: modalReducer,
+    favorites: favoritesReducer,
+    opencard: openCardReducer
 })
 
 const store = configureStore({
