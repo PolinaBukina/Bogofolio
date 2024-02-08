@@ -95,8 +95,8 @@ const LeftMenu = () => {
             </ul>
             <div>
                 <ThemeButtons />
-                <NavLink to='/signin'>
-                    <ButtonSecondary name={'Sign In'} />
+                <NavLink to='/signup'>
+                    <ButtonSecondary name={'Sign Up'} />
                 </NavLink>
             </div>
         </div>

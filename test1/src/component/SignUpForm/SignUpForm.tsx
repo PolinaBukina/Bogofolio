@@ -94,7 +94,7 @@ export const SignUpForm = () => {
     }
 
     return (
-        <form action="" className={styles.form}>
+        <form action="" className={styles.form} onClick={signUp}>
             <div>
                 {
                     formData.isSuccecRegistration?.toString()
@@ -109,6 +109,11 @@ export const SignUpForm = () => {
             </div>
 
             <div className={styles.allInputs}>
+                {
+                    errors.username && <div style={{ color: 'red' }}>
+                        {errors.username}
+                    </div>
+                }
                 <InputText
                     name={'Name'}
                     type={'text'}
@@ -122,6 +127,11 @@ export const SignUpForm = () => {
 
                 // ref1={inputRef}
                 />
+                {
+                    errors.email && <div style={{ color: 'red' }}>
+                        {errors.email}
+                    </div>
+                }
                 <InputText
                     name={'Email'}
                     type={'email'}
@@ -131,6 +141,11 @@ export const SignUpForm = () => {
                         dispatch(setUsernameAction(text))
                     }}
                 />
+                {
+                    errors.password && <div style={{ color: 'red' }}>
+                        {errors.password}
+                    </div>
+                }
                 <InputText
                     name={'Password'}
                     type={'password'}
@@ -140,6 +155,11 @@ export const SignUpForm = () => {
                         dispatch(setUsernameAction(text))
                     }}
                 />
+                {
+                    errors.password && <div style={{ color: 'red' }}>
+                        {errors.password}
+                    </div>
+                }
                 <InputText
                     name={'Confirm Password'}
                     type={'password'}
