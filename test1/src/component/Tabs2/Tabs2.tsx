@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { Navigate, NavigateFunction, useNavigate } from 'react-router-dom'
 import { setTabAction } from '../../store/tabs/actions'
 import { selectTabs } from '../../store/tabs/selectors'
 import styles from './styles.module.scss'
+import { selectTheme } from '../../store/theme/selectors'
+
 
 type Props = {
     text: string
     active?: boolean
+    // navigate: () => void
     onTabClick: () => void
 }
 
@@ -26,16 +30,28 @@ export const Tabs2 = () => {
     // const tabs = ['All', 'My favorites', 'Popular']
 
     const { tabs, activeIndex, activeTab } = useSelector(selectTabs)
+    const { theme } = useSelector(selectTheme)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const changeTabHandler = (index: number) => {
         dispatch(setTabAction(index))
     }
 
+    const navigateTabHandler = (text: string) => {
+        if (text == 'favorites') {
+            navigate('/favorites')
+        }
+    }
+
     return (
-        <div className={styles.all}>
+        <div className={`${styles.all} ${theme}`}>
             <div className={styles.tabsWrapper}>
-                <div className={styles.tabs}>
+                <div className={styles.tabs}
+                    style={{
+                        color: theme === 'light' ? '' : '#FFFFFF'
+                    }}
+                >
                     {
                         tabs.map((currentTabName, index) => (
                             <Tab
@@ -43,6 +59,7 @@ export const Tabs2 = () => {
                                 text={currentTabName}
                                 active={index === activeIndex}
                                 onTabClick={() => changeTabHandler(index)}
+                            // navigate={() => navigateTabHandler(currentTabName)}
                             />
                         ))
                     }

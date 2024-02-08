@@ -4,7 +4,7 @@
     justify-content: space-between;
     position: fixed;
     top: 0;
-    width: 190px;
+    width: 160px;
     height: 100vh;
     background-color: #FFFFFF;
     z-index: 2;
@@ -24,7 +24,7 @@
         top: 84px;
 
         .button {
-            background-color: #FFFFFF;
+            padding: 0;
             border: 1px solid #E8E8E8;
 
             a {
@@ -58,4 +58,8 @@
             }
         }
     }
-} 
+}
+
+.dark {
+    background-color: #292929;
+}

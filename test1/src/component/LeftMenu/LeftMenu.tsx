@@ -12,6 +12,7 @@ import { selectTheme } from '../../store/theme/selectors'
 const LeftMenu = () => {
     const { isOpened } = useSelector(selectMenu)
     const { isAuthhorized } = useAuthState()
+    const { theme } = useSelector(selectTheme)
 
     if (!isOpened) {
         return null
@@ -38,8 +39,13 @@ const LeftMenu = () => {
     //     </div>
     // )
 
+    // const active = theme
+
     return (
-        <div className={styles.menu} >
+        <div
+            className={`${styles.menu} ${theme}`}
+            style={{ background: theme == 'light' ? '#FFFFFF' : '#1e1d1d' }}
+        >
             <ul >
                 {
                     isAuthhorized && (
@@ -64,14 +70,28 @@ const LeftMenu = () => {
                 </NavLink> */}
                 <button className={styles.button}>
                     <NavLink to='/' >
-                        <li>Home</li>
+                        <li
+                            style={{
+                                background: theme === 'light' ? '' : '#1e1d1d',
+                                color: theme === 'light' ? '' : '#FFFFFF'
+                            }}
+                        >Home</li>
                     </NavLink>
                 </button>
-                <button className={styles.button}>
-                    <NavLink to='/addpost'>
-                        <li>Add post</li>
-                    </NavLink>
-                </button>
+                {
+                    isAuthhorized && (
+                        <button className={styles.button} >
+                            <NavLink to='/addpost'>
+                                <li
+                                    style={{
+                                        background: theme === 'light' ? '' : '#1e1d1d',
+                                        color: theme === 'light' ? '' : '#FFFFFF'
+                                    }}
+                                >Add post</li>
+                            </NavLink>
+                        </button>
+                    )
+                }
             </ul>
             <div>
                 <ThemeButtons />

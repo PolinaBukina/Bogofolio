@@ -38,11 +38,11 @@ export const SignUpForm = () => {
         }
     }, [formData])
 
-    const inputRef = useRef<HTMLInputElement>(null)
+    // const inputRef = useRef<HTMLInputElement>(null)
 
-    useEffect(() => {
-        inputRef.current?.focus()
-    })
+    // useEffect(() => {
+    //     inputRef.current?.focus()
+    // })
 
     const clearErrors = () => setErrors({})
 
@@ -117,6 +117,9 @@ export const SignUpForm = () => {
                     onChange={(text: string) => {
                         dispatch(setUsernameAction(text))
                     }}
+
+                // onChange={(text: string) => handleEmail(text)}
+
                 // ref1={inputRef}
                 />
                 <InputText

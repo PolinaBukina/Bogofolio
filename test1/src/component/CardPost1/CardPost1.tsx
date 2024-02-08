@@ -31,6 +31,7 @@ export const CardPost1 = () => {
 
     const { image } = useOpenModalState()
     const [isModalActive, setModalActive] = useState(false)
+    const { theme } = useSelector(selectTheme)
 
     const handleModalOpen = (key: any) => {
         // e.preventDefault()
@@ -93,7 +94,7 @@ export const CardPost1 = () => {
 
     return (
         // <div className={`${styles.cardContent} ${theme}`}>
-        <div className={styles.cardContent}>
+        <div className={`${styles.cardContent} ${theme}`} >
             {
                 postlist.map((item, index) => (
                     <div key={item.id} className={styles.card} >
@@ -103,10 +104,18 @@ export const CardPost1 = () => {
                                 <p className={styles.date}>
                                     {item.date}
                                 </p>
-                                <h1 className={styles.header} onClick={() => handleOpen(item.id)}>
+                                <h1 className={styles.header} onClick={() => handleOpen(item.id)}
+                                    style={{
+                                        color: theme === 'light' ? '' : '#FFFFFF'
+                                    }}
+                                >
                                     {item.title}
                                 </h1>
-                                <p className={styles.description}>
+                                <p className={styles.description}
+                                    style={{
+                                        color: theme === 'light' ? '' : '#FFFFFF'
+                                    }}
+                                >
                                     {item.text}
                                 </p>
                             </div>
@@ -125,11 +134,23 @@ export const CardPost1 = () => {
                                 <button onClick={increase}>
                                     <ButtonThumbUpIcon />
                                 </button>
-                                <p>{state}</p>
+                                <p
+                                    style={{
+                                        color: theme === 'light' ? '' : '#FFFFFF'
+                                    }}
+                                >
+                                    {state}
+                                </p>
                                 <button onClick={increase1}>
                                     <ButtonThumbDownIcon />
                                 </button>
-                                <p>{state1}</p>
+                                <p
+                                    style={{
+                                        color: theme === 'light' ? '' : '#FFFFFF'
+                                    }}
+                                >
+                                    {state1}
+                                </p>
                             </div>
                             <div className={styles.buttons}>
                                 <button onClick={() => handleAddFavorite(item.id)}>

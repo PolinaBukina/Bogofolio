@@ -3,16 +3,15 @@ import styles from './styles.module.scss'
 import { useThemeContext } from '../../helpers/themeContext'
 import { DarkIcon } from '../DarkIcon/DarkIcon'
 import { LightIcon } from '../LightIcon/LightIcon'
+import { useSelector } from 'react-redux'
+import { selectTheme } from '../../store/theme/selectors'
+import { useDispatch } from 'react-redux'
+import { setLightThemeAction, setDarkThemeAction } from '../../store/theme/actions'
 
 // type Props = {
 //     theme: string
 //     changeTheme: (theme: string) => void
 // }
-
-import { useSelector } from 'react-redux'
-import { selectTheme } from '../../store/theme/selectors'
-import { useDispatch } from 'react-redux'
-import { setLightThemeAction, setDarkThemeAction } from '../../store/theme/actions'
 
 
 export const ThemeButtons = () => {
@@ -26,13 +25,12 @@ export const ThemeButtons = () => {
 
     return (
         <div>
-            {/* theme: {theme} */}
-            {/* можно отделить в отдельный комнпонент */}
             <button
                 // onClick={() => changeTheme('dark')}
                 onClick={setDark}
                 disabled={theme !== 'light'}
                 className={styles.button}
+                style={{ background: theme == 'light' ? '' : '#292929' }}
             >
                 <DarkIcon disabled={theme === 'light'} />
             </button>
@@ -42,6 +40,7 @@ export const ThemeButtons = () => {
                 onClick={setLight}
                 disabled={theme === 'light'}
                 className={styles.button}
+                style={{ background: theme == 'light' ? '' : '#292929' }}
             >
                 <LightIcon disabled={theme !== 'light'} />
             </button>

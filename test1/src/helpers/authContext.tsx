@@ -16,7 +16,7 @@ type AuthAction = {
 
 type AuthContextType = {
     state: AuthState
-    login: (userName: string, initals: string) => void
+    login: (username: string, initals: string) => void
     logout: () => void
 }
 

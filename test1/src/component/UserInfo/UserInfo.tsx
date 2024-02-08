@@ -1,5 +1,8 @@
-import React, { useReducer, useState } from 'react'
+import React, { useContext, useReducer, useState } from 'react'
 import { act } from 'react-dom/test-utils'
+import { useAuthContext } from '../../helpers/authContext'
+import { useAuthState } from '../../store/auth/selectors'
+import { useRegState } from '../../store/registration/selectors'
 import styles from './styles.module.scss'
 
 type Props = {
@@ -47,9 +50,12 @@ const loginReducer = (state: LoginState, action: LoginAction): LoginState => { /
 
 export const UserInfo = () => {
     // const { name, symbols } = props
-    //редисер
+    //редюсер
     const [state, dispatch] = useReducer(loginReducer, loginInitState)
+    // const { isAuthhorized } = useAuthState()
     // const [isLogined, setIsLogined] = useState(false)
+
+    const { username } = useRegState()
 
     const login = () => dispatch({
         type: 'login',
@@ -71,6 +77,7 @@ export const UserInfo = () => {
         //     </p>
         // </button>
 
+        // <div className={styles.userInfo} >
         <div className={styles.userInfo} onClick={() => state.isLogined ? logout() : login()}>
             {
                 state.isLogined ? (

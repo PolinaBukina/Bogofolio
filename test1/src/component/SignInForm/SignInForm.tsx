@@ -9,6 +9,8 @@ import { signInAction } from '../../store/auth/actions'
 import { useAuthState } from '../../store/auth/selectors'
 import { setEmailAction } from '../../store/registration/actions'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectTheme } from '../../store/theme/selectors'
 
 type AuthType = {
     email: string
@@ -22,6 +24,7 @@ export const SignInForm = () => {
     const [errors, setErrors] = useState<Partial<AuthType>>({})
     const dispatch = useAppDispatch()
     const authState = useAuthState()
+    const { theme } = useSelector(selectTheme)
 
     const navigate = useNavigate()
 
@@ -88,7 +91,7 @@ export const SignInForm = () => {
     return (
         // <div>
         <form className={styles.form} onClick={signIn}>
-            <div className={styles.allInputs}>
+            <div className={`${styles.allInputs} ${theme}`}>
 
                 {
                     authState.errors?.detail && <div style={{ color: 'red' }}>
@@ -121,10 +124,19 @@ export const SignInForm = () => {
                     onChange={handlePassword}
                 />
             </div>
-            <NavLink to='/reset' className={styles.forgot}>Forgot your password?</NavLink>
+            <NavLink
+                to='/reset'
+                className={styles.forgot}
+                style={{
+                    color: theme === 'light' ? '' : '#FFFFFF'
+                }}
+            >
+                Forgot your password?
+            </NavLink>
             <ButtonPrimary
                 name={"Sign In"}
-            // onClick={() => dispatch(signIn)}
+                // onClick={() => dispatch(signIn)}
+                onClick={() => signIn}
             />
         </form>
     )

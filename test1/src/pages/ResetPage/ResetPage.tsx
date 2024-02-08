@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { FormEvent, useEffect, useRef } from 'react'
 import { InputText } from '../../component/InputText/InputText'
 import styles from './styles.module.scss'
 import { ButtonPrimary } from '../../component/ButtonPrimary/ButtonPrimary'
@@ -11,6 +11,14 @@ export const ResetPage = () => {
     useEffect(() => {
         inputRef.current?.focus()
     })
+
+    const resetHandle = (e: FormEvent<HTMLFormElement>): void => {
+        e.preventDefault()
+        if ((e.target as HTMLInputElement)?.type !== 'submit') {
+            return
+        }
+    }
+
     return (
         <>
             <div className={styles.container}>
@@ -22,7 +30,10 @@ export const ResetPage = () => {
                     <div className={styles.allInputs}>
                         <InputText name={'Email'} type={'email'} placeholder={'Your Email'} ref1={inputRef} />
                     </div>
-                    <ButtonPrimary name={"Reset"} />
+                    <ButtonPrimary
+                        name={"Reset"}
+                        onClick={() => resetHandle}
+                    />
                 </form>
             </div>
         </>
